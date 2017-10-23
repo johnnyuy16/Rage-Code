@@ -1,0 +1,85 @@
+#include<iostream.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	
+	float payment=0.0;
+	double billing=0.0, credit=0.0, balance=0.0,penalty=0.0;
+	
+	cout<<"Department Store"<<"\n";
+	cout<<"Billing Amount : ";
+	cin>>billing;
+	cout<<"Payment Amount : ";
+	cin>>payment;
+	
+	clrscr();
+	
+	if(payment==billing)
+	{
+		cout<<"Thank You for paying in fullpayment!"<<"\n";
+		cout<<"You get a 1% of the Billing Amount as a credit on your next bill"<<"\n";
+		
+		balance = billing - payment;
+		credit  = billing * 0.0l;
+		
+		cout <<"Billing Amount      : "<<billing<<"\n";
+		cout <<"Payment Amount      : "<<payment<<"\n";
+		cout <<"Balance Remaining   : "<<balance<<"\n";
+		cout <<"Credit for next bill: "<<credit<<"\n";
+	}
+	else if(payment>=0.50 || payment < 100)
+	{
+		cout<<"Thank You for paying atleast 50% of the billing amount!"<<"\n";
+		cout<<"You will get an additional 5% penalty of the remaining balance"<<"\n";
+		
+		balance = billing - payment;
+		penalty = balance * 0.05;
+		credit  = balance + penalty;
+		
+		cout <<"Billing Amount       : "<<billing<<"\n";
+		cout <<"Payment Amount       : "<<payment<<"\n";
+		cout <<"Balance Remaining    : "<<balance<<"\n";
+		cout <<"Penalty Amount       : "<<penalty<<"\n";
+		cout <<"Balance for next bill: "<<credit<<"\n";
+		
+	}
+	else if(payment>=0.20 || payment<0.50)
+		
+	{
+		cout<<"Thank You for paying atleast 20% of the billing amount!"<<"\n";
+		cout<<"You will get an additional 10% penalty of the remaining balance"<<"\n";
+		
+		balance = billing - payment;
+		penalty = balance * 0.1;
+		credit  = balance + penalty;
+		
+		cout <<"Billing Amount       : "<<billing<<"\n";
+		cout <<"Payment Amount       : "<<payment<<"\n";
+		cout <<"Balance Remaining    : "<<balance<<"\n";
+		cout <<"Penalty Amount       : "<<penalty<<"\n";
+		cout <<"Balance for next bill: "<<credit<<"\n";
+		
+	}
+	
+	else if(payment<0.20)
+	{
+		cout<<"Sorry but you will get an additional 20% penalty of the remaining balance"<<"\n";
+		
+		balance = billing - payment;
+		penalty = balance * 0.2;
+		credit  = balance + penalty;
+		
+		cout <<"Billing Amount       : "<<billing<<"\n";
+		cout <<"Payment Amount       : "<<payment<<"\n";
+		cout <<"Balance Remaining    : "<<balance<<"\n";
+		cout <<"Penalty Amount       : "<<penalty<<"\n";
+		cout <<"Balance for next bill: "<<credit<<"\n";
+	}
+	
+	
+getch();
+}
